@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Elevation | Portfolio & Program Management</title>
+  <style>
+    :root {
+      --graphite: #1C1F26;
+      --blue: #0B3D91;
+      --steel: #6B7280;
+      --light: #F4F6F8;
+      --white: #FFFFFF;
+      --border: #E5E7EB;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--graphite);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px 56px;
+    }
+
+    header {
+      padding: 56px 0 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-text {
+      max-width: 760px;
+      font-size: 20px;
+      color: #374151;
+      margin-bottom: 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      border: 1px solid rgba(11,61,145,0.22);
+      color: var(--blue);
+      background: rgba(11,61,145,0.06);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section { padding: 42px 0 0; }
+
+    .section-title {
+      font-size: 30px;
+      margin: 0 0 12px;
+      letter-spacing: -0.025em;
+    }
+
+    .section-intro {
+      max-width: 820px;
+      color: #4B5563;
+      font-size: 17px;
+      margin: 0 0 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      background: var(--white);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      color: var(--blue);
+    }
+
+    .card p { margin: 0; color: #4B5563; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+      color: #374151;
+    }
+
+    .list li { margin-bottom: 10px; }
+
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .step {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      min-height: 130px;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      background: var(--graphite);
+      color: var(--white);
+      border-radius: 18px;
+      padding: 22px;
+      min-height: 135px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 13px;
+      color: #D1D5DB;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .metric strong {
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .cta {
+      margin-top: 46px;
+      background: linear-gradient(135deg, var(--graphite), var(--blue));
+      color: var(--white);
+      border-radius: 28px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.6fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      letter-spacing: -0.025em;
+    }
+
+    .cta p { margin: 0; color: #E5E7EB; font-size: 17px; }
+
+    .button {
+      display: inline-block;
+      justify-self: end;
+      background: var(--white);
+      color: var(--blue);
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 36px;
+      color: var(--steel);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .two-col, .cta { grid-template-columns: 1fr; }
+      .cards, .stack, .metrics { grid-template-columns: 1fr 1fr; }
+      .button { justify-self: start; }
+    }
+
+    @media (max-width: 560px) {
+      .page { padding: 0 18px 42px; }
+      .cards, .stack, .metrics { grid-template-columns: 1fr; }
+      header { padding-top: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="eyebrow">IT Elevation | Governance Layer</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Portfolio & Program Management</h1>
+          <p class="hero-text">
+            Turn strategic priorities into an executable, transparent, and value-driven portfolio that aligns investments, programs, delivery capacity, and business outcomes.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Portfolio Governance</span>
+            <span class="pill">Program Control</span>
+            <span class="pill">Investment Alignment</span>
+            <span class="pill">Value Realization</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Program Purpose</h2>
+          <p>
+            Establish the management discipline, decision cadence, visibility, and accountability needed to make the technology portfolio easier to prioritize, fund, execute, and measure.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title">Why it matters</h2>
+      <p class="section-intro">
+        Many organizations have strong ideas, active projects, and committed teams, but still struggle to connect strategy with execution. Portfolio & Program Management creates the operating system for deciding what matters, funding the right work, managing dependencies, and proving value.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <h3>Common Challenge</h3>
+          <p>Too many initiatives compete for the same capacity, with unclear trade-offs, inconsistent prioritization, and limited executive visibility.</p>
+        </article>
+        <article class="card">
+          <h3>Business Impact</h3>
+          <p>Critical programs slow down, budgets become harder to defend, dependencies surface late, and value realization becomes difficult to prove.</p>
+        </article>
+        <article class="card">
+          <h3>Program Outcome</h3>
+          <p>A governed, measurable, and outcome-oriented portfolio that helps leaders make better investment and execution decisions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">What the program helps you build</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Core Capabilities</h3>
+          <ul class="list">
+            <li>Portfolio intake, prioritization, and governance model.</li>
+            <li>Program planning, controls, issue escalation, and dependency management.</li>
+            <li>Investment, capacity, and roadmap alignment across business and IT.</li>
+            <li>Executive reporting focused on progress, risk, value, and decisions.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Client Value</h3>
+          <ul class="list">
+            <li>Clearer executive decision-making and accountability.</li>
+            <li>Improved visibility into spend, delivery health, and expected value.</li>
+            <li>Reduced duplication, conflicting priorities, and unmanaged dependencies.</li>
+            <li>Stronger connection between strategy, funding, execution, and outcomes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Transformation journey</h2>
+      <p class="section-intro">
+        The program can start with a focused assessment and evolve into a practical operating model that improves portfolio discipline without adding unnecessary bureaucracy.
+      </p>
+      <div class="stack">
+        <div class="step"><strong>1. Assess</strong>Review current portfolio, governance forums, program controls, funding model, and reporting practices.</div>
+        <div class="step"><strong>2. Align</strong>Define portfolio objectives, decision rights, prioritization criteria, and executive cadence.</div>
+        <div class="step"><strong>3. Design</strong>Create the portfolio operating model, program management standards, controls, and reporting framework.</div>
+        <div class="step"><strong>4. Activate</strong>Launch governance routines, dashboards, escalation paths, and value tracking mechanisms.</div>
+        <div class="step"><strong>5. Prioritize</strong>Rank initiatives based on strategic fit, value, risk, capacity, dependency, and readiness.</div>
+        <div class="step"><strong>6. Execute</strong>Apply consistent program planning, status management, risk control, and dependency oversight.</div>
+        <div class="step"><strong>7. Measure</strong>Track outcomes, delivery health, benefits, investment performance, and decision effectiveness.</div>
+        <div class="step"><strong>8. Improve</strong>Refine governance, reporting, funding, and portfolio practices through continuous feedback.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Typical deliverables</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Portfolio Governance Model</h3>
+          <p>Decision forums, roles, escalation paths, prioritization criteria, intake flow, and executive cadence.</p>
+        </article>
+        <article class="card">
+          <h3>Program Management Framework</h3>
+          <p>Planning standards, status discipline, risk and issue management, dependency control, and delivery governance.</p>
+        </article>
+        <article class="card">
+          <h3>Portfolio Dashboard</h3>
+          <p>Executive view of investment, progress, risk, capacity, dependencies, outcomes, and decisions required.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Success measures</h2>
+      <div class="metrics">
+        <div class="metric"><span>Alignment</span><strong>Percentage of active initiatives mapped to strategic priorities</strong></div>
+        <div class="metric"><span>Control</span><strong>Programs with current plans, risks, dependencies, and status discipline</strong></div>
+        <div class="metric"><span>Value</span><strong>Portfolio benefits tracked against expected business outcomes</strong></div>
+        <div class="metric"><span>Decisions</span><strong>Executive decisions resolved within governance cadence</strong></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Make the portfolio easier to decide, execute, and measure.</h2>
+        <p>
+          Portfolio & Program Management helps technology leaders create the visibility, discipline, and accountability required to turn strategy into measurable business results.
+        </p>
+      </div>
+      <a class="button" href="#">Start the conversation</a>
+    </section>
+
+    <footer>
+      IT Elevation | Governance Layer | Portfolio & Program Management
+    </footer>
+  </main>
+</body>
+</html>

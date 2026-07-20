@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Elevation | Technology Done Right</title>
+  <style>
+    :root {
+      --graphite:#1C1F26;
+      --blue:#0B3D91;
+      --steel:#6B7280;
+      --light:#F4F6F8;
+      --white:#FFFFFF;
+      --line:#D9DEE7;
+      --soft-blue:#EAF1FB;
+      --governance:#0B3D91;
+      --architecture:#2F5FA5;
+      --delivery:#4F7FC4;
+      --orchestration:#7AA7E8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--graphite);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .hero {
+      min-height: 640px;
+      padding: 42px 7vw 70px;
+      background:
+        linear-gradient(135deg, rgba(11,61,145,.96), rgba(28,31,38,.96)),
+        radial-gradient(circle at 85% 18%, rgba(255,255,255,.18), transparent 32%);
+      color: var(--white);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 86px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      opacity: .92;
+      flex-wrap: wrap;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.32);
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .96;
+      margin: 0 0 24px;
+      letter-spacing: -0.045em;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 720px;
+      color: rgba(255,255,255,.88);
+      margin: 0 0 34px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .btn.primary { background: var(--white); color: var(--blue); }
+    .btn.secondary { border: 1px solid rgba(255,255,255,.42); color: var(--white); }
+
+    .hero-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 28px 70px rgba(0,0,0,.18);
+    }
+
+    .portfolio-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .stack-item {
+      background: rgba(255,255,255,.92);
+      color: var(--graphite);
+      border-radius: 18px;
+      padding: 18px;
+      border-left: 7px solid var(--blue);
+    }
+
+    .stack-item h3 { margin: 0 0 4px; font-size: 18px; }
+    .stack-item p { margin: 0; font-size: 14px; color: var(--steel); }
+    .stack-item:nth-child(1) { border-left-color: var(--governance); }
+    .stack-item:nth-child(2) { border-left-color: var(--architecture); }
+    .stack-item:nth-child(3) { border-left-color: var(--delivery); }
+    .stack-item:nth-child(4) { border-left-color: var(--orchestration); }
+
+    section { padding: 82px 7vw; }
+
+    .section-head {
+      max-width: 900px;
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 0 0 18px;
+    }
+
+    .lead {
+      color: var(--steel);
+      font-size: 18px;
+      max-width: 850px;
+      margin: 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      background: var(--white);
+      box-shadow: 0 12px 34px rgba(28,31,38,.06);
+    }
+
+    .card h3 { margin: 0 0 12px; font-size: 21px; }
+    .card p { margin: 0; color: var(--steel); font-size: 15px; }
+
+    .light { background: var(--light); }
+
+    .layer-card {
+      border-radius: 24px;
+      padding: 28px;
+      color: var(--white);
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 48px rgba(28,31,38,.12);
+    }
+
+    .layer-card h3 { margin: 0 0 10px; font-size: 25px; }
+    .layer-card p { margin: 0 0 20px; color: rgba(255,255,255,.86); }
+    .layer-card ul { margin: 0; padding-left: 18px; color: rgba(255,255,255,.9); font-size: 14px; }
+    .layer-card li { margin: 7px 0; }
+
+    .governance { background: linear-gradient(135deg, #0B3D91, #092D68); }
+    .architecture { background: linear-gradient(135deg, #2F5FA5, #193E7C); }
+    .delivery { background: linear-gradient(135deg, #4F7FC4, #245FAE); }
+    .orchestration { background: linear-gradient(135deg, #7AA7E8, #315F9C); }
+
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .outcome {
+      display: flex;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--white);
+    }
+
+    .num {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--soft-blue);
+      color: var(--blue);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .outcome h3 { margin: 0 0 8px; font-size: 19px; }
+    .outcome p { margin: 0; color: var(--steel); font-size: 15px; }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      background: var(--white);
+      min-height: 160px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: var(--blue);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .step h3 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--steel); font-size: 14px; }
+
+    .cta-section {
+      background: var(--graphite);
+      color: var(--white);
+      border-radius: 34px;
+      margin: 80px 7vw;
+      padding: 56px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .cta-section h2 { margin-bottom: 14px; }
+    .cta-section p { color: rgba(255,255,255,.78); margin: 0; font-size: 18px; }
+
+    footer {
+      padding: 34px 7vw;
+      color: var(--steel);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .cta-section { grid-template-columns: 1fr; }
+      .grid-4, .journey { grid-template-columns: repeat(2, 1fr); }
+      .grid-3, .outcomes { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; margin-bottom: 54px; }
+    }
+
+    @media (max-width: 620px) {
+      section { padding: 58px 6vw; }
+      .hero { padding: 32px 6vw 58px; }
+      .grid-4, .journey { grid-template-columns: 1fr; }
+      .cta-section { margin: 58px 6vw; padding: 34px; }
+      .nav-links { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="brand">IT Elevation</div>
+      <div class="nav-links">
+        <a href="#challenge">Challenge</a>
+        <a href="#layers">Layers</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#journey">Journey</a>
+      </div>
+    </nav>
+
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Technology Transformation Portfolio</span>
+        <h1>Technology done right.</h1>
+        <p>IT Elevation helps organizations align technology decisions, simplify architecture, improve delivery performance, and scale integrated intelligence across the enterprise.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#layers">Explore the Portfolio</a>
+          <a class="btn secondary" href="#journey">Start the Assessment</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="IT Elevation Portfolio Layers">
+        <div class="portfolio-stack">
+          <div class="stack-item">
+            <h3>Governance</h3>
+            <p>Value and decision alignment.</p>
+          </div>
+          <div class="stack-item">
+            <h3>Architecture</h3>
+            <p>Simplification and standardization.</p>
+          </div>
+          <div class="stack-item">
+            <h3>Delivery</h3>
+            <p>Speed, quality, and stability.</p>
+          </div>
+          <div class="stack-item">
+            <h3>Orchestration</h3>
+            <p>Integration, intelligence, and scale.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="challenge">
+    <div class="section-head">
+      <div class="section-label">Why IT Elevation</div>
+      <h2>Most technology organizations do not fail because of lack of effort. They fail because execution is fragmented.</h2>
+      <p class="lead">Priorities are misaligned, architecture becomes complex, delivery slows down, and innovation remains trapped in isolated initiatives. IT Elevation provides a practical transformation model to connect strategy, execution, and measurable business outcomes.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Unclear value alignment</h3>
+        <p>Technology investments are often approved without a direct connection to business value, measurable outcomes, or executive accountability.</p>
+      </div>
+      <div class="card">
+        <h3>Growing complexity</h3>
+        <p>Platforms, data, infrastructure, and applications expand faster than the operating model can standardize, govern, and simplify them.</p>
+      </div>
+      <div class="card">
+        <h3>Inconsistent execution</h3>
+        <p>Delivery teams work hard, but speed, quality, stability, and adoption vary across programs, vendors, teams, and business units.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="layers" class="light">
+    <div class="section-head">
+      <div class="section-label">The Portfolio Model</div>
+      <h2>Four layers. Sixteen programs. One integrated transformation system.</h2>
+      <p class="lead">Each layer addresses a different source of technology performance. Together, they create the management system, technical foundation, delivery engine, and orchestration capabilities required to elevate IT.</p>
+    </div>
+
+    <div class="grid-4">
+      <article class="layer-card governance">
+        <div>
+          <h3>Governance</h3>
+          <p>Align decisions, priorities, funding, risk, and change around measurable business value.</p>
+        </div>
+        <ul>
+          <li>Product Management</li>
+          <li>Portfolio & Program Management</li>
+          <li>Change Management</li>
+          <li>Security Management</li>
+        </ul>
+      </article>
+
+      <article class="layer-card architecture">
+        <div>
+          <h3>Architecture</h3>
+          <p>Simplify and standardize the technology foundation to enable scale, agility, and resilience.</p>
+        </div>
+        <ul>
+          <li>Enterprise Architecture</li>
+          <li>Technology Architecture</li>
+          <li>Data Architecture</li>
+          <li>Infrastructure Architecture</li>
+        </ul>
+      </article>
+
+      <article class="layer-card delivery">
+        <div>
+          <h3>Delivery</h3>
+          <p>Improve execution speed, quality, predictability, and operational stability across technology teams.</p>
+        </div>
+        <ul>
+          <li>Application Development</li>
+          <li>Quality Engineering</li>
+          <li>App Maintenance & Support</li>
+          <li>Data Insights</li>
+        </ul>
+      </article>
+
+      <article class="layer-card orchestration">
+        <div>
+          <h3>Orchestration</h3>
+          <p>Connect solutions, intelligence, automation, and sourcing models to scale enterprise outcomes.</p>
+        </div>
+        <ul>
+          <li>Unified Solutions</li>
+          <li>Cognitive Solutions</li>
+          <li>Agentic Solutions</li>
+          <li>Outsourcing Solutions</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="outcomes">
+    <div class="section-head">
+      <div class="section-label">Business Outcomes</div>
+      <h2>Designed to help CIOs and executive teams move from fragmented activity to visible performance.</h2>
+      <p class="lead">IT Elevation focuses on practical outcomes that matter to technology leaders and business stakeholders: faster decisions, cleaner architecture, stronger delivery, better adoption, and scalable innovation.</p>
+    </div>
+
+    <div class="outcomes">
+      <div class="outcome">
+        <div class="num">01</div>
+        <div>
+          <h3>Sharper technology investment decisions</h3>
+          <p>Connect portfolio funding, product priorities, business cases, risk, and value realization in a common decision model.</p>
+        </div>
+      </div>
+      <div class="outcome">
+        <div class="num">02</div>
+        <div>
+          <h3>Simpler, more scalable technology landscape</h3>
+          <p>Reduce duplication, clarify standards, improve data foundations, and strengthen architecture governance.</p>
+        </div>
+      </div>
+      <div class="outcome">
+        <div class="num">03</div>
+        <div>
+          <h3>More predictable delivery performance</h3>
+          <p>Improve execution discipline, quality automation, service stability, and performance visibility across delivery teams.</p>
+        </div>
+      </div>
+      <div class="outcome">
+        <div class="num">04</div>
+        <div>
+          <h3>Enterprise-wide intelligence and scale</h3>
+          <p>Orchestrate integrated solutions, cognitive capabilities, agentic workflows, and managed sourcing models.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="light">
+    <div class="section-head">
+      <div class="section-label">Transformation Journey</div>
+      <h2>A practical path from assessment to measurable transformation.</h2>
+      <p class="lead">The portfolio can start at the enterprise level, at a specific layer, or within a targeted program depending on client priorities, maturity, urgency, and business needs.</p>
+    </div>
+
+    <div class="journey">
+      <div class="step">
+        <h3>Assess current state</h3>
+        <p>Identify maturity, pain points, risks, gaps, and business priorities across the technology organization.</p>
+      </div>
+      <div class="step">
+        <h3>Define target outcomes</h3>
+        <p>Translate executive priorities into measurable technology, operating, and business outcomes.</p>
+      </div>
+      <div class="step">
+        <h3>Prioritize initiatives</h3>
+        <p>Select the highest-value layers, programs, and initiatives based on value, urgency, feasibility, and dependencies.</p>
+      </div>
+      <div class="step">
+        <h3>Design the roadmap</h3>
+        <p>Create an actionable transformation roadmap with governance, milestones, ownership, and success metrics.</p>
+      </div>
+      <div class="step">
+        <h3>Mobilize the teams</h3>
+        <p>Align sponsors, product owners, architects, delivery teams, security, change leaders, and partners.</p>
+      </div>
+      <div class="step">
+        <h3>Execute priority waves</h3>
+        <p>Deliver transformation through focused waves that produce visible improvements and reusable capabilities.</p>
+      </div>
+      <div class="step">
+        <h3>Measure performance</h3>
+        <p>Track operational and outcome metrics to demonstrate progress, manage risks, and guide decisions.</p>
+      </div>
+      <div class="step">
+        <h3>Scale and improve</h3>
+        <p>Institutionalize practices, expand adoption, and continue improving the enterprise technology operating model.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <div>
+      <div class="section-label" style="color:#AFCBFF;">Start the Conversation</div>
+      <h2>Elevate IT from a support function to a transformation engine.</h2>
+      <p>Use IT Elevation to assess the current state, align the executive agenda, prioritize the roadmap, and activate the programs that will create the greatest business impact.</p>
+    </div>
+    <div class="cta-row" style="justify-content:flex-start;">
+      <a class="btn primary" href="mailto:contact@example.com?subject=IT%20Elevation%20Assessment">Schedule an Assessment</a>
+      <a class="btn secondary" href="#layers">Review the Layers</a>
+    </div>
+  </div>
+
+  <footer>
+    <div><strong>IT Elevation</strong> | Technology done right.</div>
+    <div>Governance · Architecture · Delivery · Orchestration</div>
+  </footer>
+</body>
+</html>

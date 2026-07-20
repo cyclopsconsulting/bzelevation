@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Frame Content</title>
+    <style>
+        /* Fit the body to the exact dimensions of the bottom iframe */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #e2e2e2;
+            overflow: hidden; /* Prevents unwanted scrollbars in the small footer panel */
+        }
+
+        /* 
+           Flexbox Layout:
+           Centers the text horizontally and vertically inside the panel 
+        */
+        .footer-container {
+            display: flex;
+            justify-content: center; /* Horizontally center text */
+            align-items: center;     /* Vertically center text */
+            height: 50px;            /* Matches the master frame size */
+            box-sizing: border-box;
+            padding: 0 15px;
+        }
+
+        /* Styling for the legend text */
+        .footer-text {
+            font-size: 12px;
+            color: #6B7280;
+            letter-spacing: 0.4px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <footer class="footer-container">
+        <div class="footer-text">
+            All Rights Reserved © BZ | IT Elevation™ - 2026.
+        </div>
+    </footer>
+
+</body>
+</html>

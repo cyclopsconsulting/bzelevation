@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Elevation | Technology Architecture</title>
+  <style>
+    :root {
+      --graphite: #1C1F26;
+      --blue: #0B3D91;
+      --steel: #6B7280;
+      --light: #F4F6F8;
+      --white: #FFFFFF;
+      --border: #E5E7EB;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--graphite);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px 56px;
+    }
+
+    header {
+      padding: 56px 0 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-text {
+      max-width: 760px;
+      font-size: 20px;
+      color: #374151;
+      margin-bottom: 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      border: 1px solid rgba(11,61,145,0.22);
+      color: var(--blue);
+      background: rgba(11,61,145,0.06);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section { padding: 42px 0 0; }
+
+    .section-title {
+      font-size: 30px;
+      margin: 0 0 12px;
+      letter-spacing: -0.025em;
+    }
+
+    .section-intro {
+      max-width: 820px;
+      color: #4B5563;
+      font-size: 17px;
+      margin: 0 0 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      background: var(--white);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      color: var(--blue);
+    }
+
+    .card p { margin: 0; color: #4B5563; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+      color: #374151;
+    }
+
+    .list li { margin-bottom: 10px; }
+
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .step {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      min-height: 130px;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      background: var(--graphite);
+      color: var(--white);
+      border-radius: 18px;
+      padding: 22px;
+      min-height: 135px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 13px;
+      color: #D1D5DB;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .metric strong {
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .cta {
+      margin-top: 46px;
+      background: linear-gradient(135deg, var(--graphite), var(--blue));
+      color: var(--white);
+      border-radius: 28px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.6fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      letter-spacing: -0.025em;
+    }
+
+    .cta p { margin: 0; color: #E5E7EB; font-size: 17px; }
+
+    .button {
+      display: inline-block;
+      justify-self: end;
+      background: var(--white);
+      color: var(--blue);
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 36px;
+      color: var(--steel);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .two-col, .cta { grid-template-columns: 1fr; }
+      .cards, .stack, .metrics { grid-template-columns: 1fr 1fr; }
+      .button { justify-self: start; }
+    }
+
+    @media (max-width: 560px) {
+      .page { padding: 0 18px 42px; }
+      .cards, .stack, .metrics { grid-template-columns: 1fr; }
+      header { padding-top: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="eyebrow">IT Elevation | Architecture Layer</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Technology Architecture</h1>
+          <p class="hero-text">
+            Define the technology standards, platform direction, and engineering guardrails required to modernize the technology estate, reduce technical fragmentation, and scale delivery with confidence.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Platform Strategy</span>
+            <span class="pill">Technology Standards</span>
+            <span class="pill">Integration Patterns</span>
+            <span class="pill">Engineering Guardrails</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Program Purpose</h2>
+          <p>
+            Build a practical Technology Architecture capability that connects business strategy, capabilities, platforms, data, integration, and technology investments into a clear transformation direction.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title">Why it matters</h2>
+      <p class="section-intro">
+        Technology Architecture helps organizations reduce complexity, prevent fragmented decisions, and ensure technology investments support the business capabilities that matter most.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <h3>Common Challenge</h3>
+          <p>Technology decisions are often made solution by solution, creating inconsistent platforms, integration sprawl, duplicated tools, unclear technical ownership, and avoidable operational risk.</p>
+        </article>
+        <article class="card">
+          <h3>Business Impact</h3>
+          <p>Technical complexity increases cost, slows delivery, weakens resiliency, creates security exposure, and makes it harder to modernize core systems without disruption.</p>
+        </article>
+        <article class="card">
+          <h3>Program Outcome</h3>
+          <p>A clear technology architecture model that defines the target platform direction, standard patterns, modernization priorities, and governance routines needed to scale technology execution.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">What the program helps you build</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Core Capabilities</h3>
+          <ul class="list">
+            <li>Technology platform mapping connected to applications, cloud, infrastructure, integrations, data services, security, and operations.</li>
+            <li>Current-state and target-state technology views that make technical debt, platform fragmentation, and integration risk visible and actionable.</li>
+            <li>Technology principles, standards, reference architectures, approved patterns, and engineering guardrails.</li>
+            <li>Roadmaps, governance routines, and technical review processes that align platform decisions with transformation priorities.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Client Value</h3>
+          <ul class="list">
+            <li>Improved visibility into technical debt, platform risk, integration complexity, and modernization priorities.</li>
+            <li>Stronger alignment between platform strategy, delivery execution, security needs, and operational resilience.</li>
+            <li>Reduced duplication through reusable patterns, standard platforms, and clearer technology direction.</li>
+            <li>Faster technical decision-making through reference models, standards, governance, and executive-ready modernization roadmaps.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Transformation journey</h2>
+      <p class="section-intro">
+        The program can start with a focused technology assessment and evolve into an operating capability that continuously guides modernization, platform simplification, and technical consistency.
+      </p>
+      <div class="stack">
+        <div class="step"><strong>1. Assess</strong>Review business priorities, technology landscape, platforms, cloud footprint, infrastructure, integrations, security needs, and known technical pain points.</div>
+        <div class="step"><strong>2. Map</strong>Create current-state views that connect systems, platforms, integrations, environments, ownership, technical debt, cost, risk, and operational value.</div>
+        <div class="step"><strong>3. Align</strong>Align technology and business leaders on platform principles, target outcomes, decision rights, technical standards, and modernization priorities.</div>
+        <div class="step"><strong>4. Design</strong>Define target-state technology architecture, reference patterns, platform direction, integration standards, and simplification opportunities.</div>
+        <div class="step"><strong>5. Prioritize</strong>Translate technology gaps into initiatives based on business value, technical risk, complexity reduction, dependency, resilience, and feasibility.</div>
+        <div class="step"><strong>6. Roadmap</strong>Create a phased technology roadmap that connects platform initiatives, dependencies, milestones, investment needs, and expected outcomes.</div>
+        <div class="step"><strong>7. Govern</strong>Launch technical review routines, decision forums, exception management, and standards adoption across product and delivery teams.</div>
+        <div class="step"><strong>8. Improve</strong>Continuously refresh technology views, standards, approved patterns, and roadmaps as business priorities and platform conditions evolve.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Typical deliverables</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Technology Architecture Blueprint</h3>
+          <p>Current-state and target-state views across applications, platforms, infrastructure, cloud, integrations, environments, and ownership.</p>
+        </article>
+        <article class="card">
+          <h3>Technology Standards & Governance</h3>
+          <p>Principles, reference architectures, approved patterns, decision rights, review routines, and exception management approach.</p>
+        </article>
+        <article class="card">
+          <h3>Platform Modernization Roadmap</h3>
+          <p>Prioritized platform initiatives, dependencies, sequencing, investment themes, and measurable outcomes for modernization and resilience.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Success measures</h2>
+      <div class="metrics">
+        <div class="metric"><span>Alignment</span><strong>Technology platforms mapped to business priorities, delivery needs, and modernization investments</strong></div>
+        <div class="metric"><span>Simplification</span><strong>Redundant platforms, tools, environments, and integration patterns identified for rationalization</strong></div>
+        <div class="metric"><span>Governance</span><strong>Technology decisions managed through clear standards, ownership, technical reviews, and exception handling</strong></div>
+        <div class="metric"><span>Roadmap</span><strong>Platform modernization initiatives sequenced with dependencies, risk reduction, and measurable outcomes</strong></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Create the technology foundation for scalable transformation.</h2>
+        <p>
+          Technology Architecture helps technology leaders simplify complexity, align investments, and guide execution through a clear, business-driven architecture model.
+        </p>
+      </div>
+      <a class="button" href="#">Start the conversation</a>
+    </section>
+
+    <footer>
+      IT Elevation | Architecture Layer | Technology Architecture
+    </footer>
+  </main>
+</body>
+</html>

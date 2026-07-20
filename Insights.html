@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Elevation | Data Insights</title>
+  <style>
+    :root {
+      --graphite: #1C1F26;
+      --blue: #0B3D91;
+      --steel: #6B7280;
+      --light: #F4F6F8;
+      --white: #FFFFFF;
+      --border: #E5E7EB;
+      --accent: #EAF1FF;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--graphite);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--graphite), var(--blue));
+      color: var(--white);
+      padding: 72px 8% 64px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      opacity: 0.85;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      margin: 0 0 22px;
+      max-width: 900px;
+    }
+
+    .hero-copy {
+      font-size: 1.2rem;
+      max-width: 820px;
+      color: #E5E7EB;
+      margin-bottom: 32px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: var(--white);
+    }
+
+    .button.primary {
+      background: var(--white);
+      color: var(--blue);
+      border-color: var(--white);
+    }
+
+    main { padding: 0 8%; }
+
+    section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 0 0 16px;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      color: var(--steel);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 8px 24px rgba(28,31,38,0.06);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+      color: var(--blue);
+    }
+
+    .card p { margin: 0; color: var(--steel); }
+
+    .band {
+      background: var(--light);
+      margin-left: -8vw;
+      margin-right: -8vw;
+      padding-left: 8vw;
+      padding-right: 8vw;
+    }
+
+    .value-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      background: var(--accent);
+      border: 1px solid #D8E5FF;
+      border-radius: 16px;
+      padding: 22px;
+      min-height: 120px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .step:before {
+      counter-increment: step;
+      content: counter(step);
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .step h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .step p { margin: 0; color: var(--steel); }
+
+    .quote {
+      background: var(--graphite);
+      color: var(--white);
+      border-radius: 24px;
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .quote h2 { margin: 0 0 12px; font-size: 2rem; }
+    .quote p { margin: 0; color: #D1D5DB; }
+
+    footer {
+      background: var(--graphite);
+      color: var(--white);
+      padding: 34px 8%;
+      margin-top: 40px;
+    }
+
+    footer p { margin: 0; color: #D1D5DB; }
+
+    @media (max-width: 900px) {
+      .grid, .grid.two, .value-strip, .journey, .quote {
+        grid-template-columns: 1fr;
+      }
+      header { padding-top: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">IT Elevation | Delivery Layer</div>
+    <h1>Data Insights</h1>
+    <p class="hero-copy">
+      Transform scattered data into trusted, actionable insight. The Data Insights program helps organizations improve decision-making, performance visibility, and business outcomes through practical analytics, governed metrics, and executive-ready reporting.
+    </p>
+    <div class="cta-row">
+      <a class="button primary" href="#assessment">Schedule an Insights Assessment</a>
+      <a class="button" href="#journey">Explore the Program Journey</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="section-title">What this program solves</h2>
+      <p class="section-intro">
+        Many organizations have more data than insight. Reports are fragmented, metrics are inconsistent, and leaders struggle to connect operational performance to business outcomes. Data Insights creates the structure, discipline, and reporting foundation needed to make better decisions faster.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Inconsistent metrics</h3>
+          <p>Aligns definitions, KPIs, dashboards, and reporting logic so teams measure performance the same way.</p>
+        </div>
+        <div class="card">
+          <h3>Limited decision visibility</h3>
+          <p>Turns operational data into executive insight, helping leaders understand what is happening, why it matters, and where to act.</p>
+        </div>
+        <div class="card">
+          <h3>Manual reporting effort</h3>
+          <p>Reduces dependency on manual spreadsheets and recurring ad hoc analysis through repeatable reporting models.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="band">
+      <section>
+        <h2 class="section-title">Program value proposition</h2>
+        <p class="section-intro">
+          Data Insights connects strategy, operations, technology, and data into a practical analytics capability that business leaders can trust and use.
+        </p>
+        <div class="value-strip">
+          <div class="metric"><strong>Trusted information</strong>Common KPI definitions and governed reporting logic.</div>
+          <div class="metric"><strong>Faster decisions</strong>Clear dashboards that highlight priorities, risks, and actions.</div>
+          <div class="metric"><strong>Operational visibility</strong>Performance views across teams, processes, and outcomes.</div>
+          <div class="metric"><strong>Analytics readiness</strong>A foundation for advanced analytics, automation, and AI-enabled insight.</div>
+        </div>
+      </section>
+    </div>
+
+    <section>
+      <h2 class="section-title">Core capabilities</h2>
+      <p class="section-intro">
+        The program focuses on building a usable, scalable, and business-aligned insights capability rather than isolated dashboards.
+      </p>
+      <div class="grid two">
+        <div class="card">
+          <h3>KPI and metrics framework</h3>
+          <p>Defines the performance indicators, ownership model, calculation logic, and decision context required for consistent measurement.</p>
+        </div>
+        <div class="card">
+          <h3>Dashboard and reporting design</h3>
+          <p>Creates executive, operational, and team-level dashboards that make performance clear and actionable.</p>
+        </div>
+        <div class="card">
+          <h3>Data quality and governance alignment</h3>
+          <p>Identifies data quality gaps, ownership needs, and governance controls that affect confidence in reporting.</p>
+        </div>
+        <div class="card">
+          <h3>Insights operating model</h3>
+          <p>Establishes roles, routines, cadences, and continuous improvement practices for sustained analytics value.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="band" id="journey">
+      <section>
+        <h2 class="section-title">Program journey</h2>
+        <p class="section-intro">
+          A practical path to move from fragmented reporting to trusted, outcome-oriented insight.
+        </p>
+        <div class="journey">
+          <div class="step"><h3>Assess</h3><p>Review reporting pain points, decision needs, current dashboards, KPI gaps, and data readiness.</p></div>
+          <div class="step"><h3>Align</h3><p>Define priority use cases, KPI definitions, stakeholders, governance needs, and expected business value.</p></div>
+          <div class="step"><h3>Design</h3><p>Create the dashboard model, data flow, reporting structure, and adoption approach.</p></div>
+          <div class="step"><h3>Deliver</h3><p>Build and validate dashboards, reports, and insight routines with business and technology teams.</p></div>
+          <div class="step"><h3>Adopt</h3><p>Enable users, integrate insights into management routines, and refine based on feedback.</p></div>
+          <div class="step"><h3>Govern</h3><p>Establish ownership, refresh cycles, data quality checks, and KPI stewardship.</p></div>
+          <div class="step"><h3>Scale</h3><p>Expand reusable analytics patterns across functions, programs, and business units.</p></div>
+          <div class="step"><h3>Improve</h3><p>Continuously evolve insight products based on performance outcomes and new business needs.</p></div>
+        </div>
+      </section>
+    </div>
+
+    <section>
+      <div class="quote">
+        <div>
+          <h2>From reporting activity to business insight.</h2>
+          <p>
+            Data Insights helps leaders replace fragmented reporting with a trusted performance language that connects decisions, actions, and outcomes.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Ideal starting point</h3>
+          <p>
+            Begin with a focused assessment of current dashboards, executive reporting needs, KPI definitions, and high-value decision scenarios.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="assessment">
+      <h2 class="section-title">Typical client outcomes</h2>
+      <div class="grid">
+        <div class="card"><h3>Executive dashboards</h3><p>Clear views of operational and outcome metrics aligned to leadership priorities.</p></div>
+        <div class="card"><h3>KPI ownership</h3><p>Documented metric definitions, owners, sources, and governance expectations.</p></div>
+        <div class="card"><h3>Insight roadmap</h3><p>A prioritized path to improve reporting maturity, analytics adoption, and business impact.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>IT Elevation | Data Insights Program — Delivery Layer</p>
+  </footer>
+</body>
+</html>

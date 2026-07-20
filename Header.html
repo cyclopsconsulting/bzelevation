@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Frame Content</title>
+    <style>
+        /* Ensure the body fits the exact height of the header frame grid container */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #F4F6F8;
+            overflow: hidden; /* Prevents scrollbars in the small header panel */
+        }
+
+        /* 
+           Flexbox Strategy:
+           Aligns child elements horizontally and pushes them to opposite ends 
+        */
+        .header-container {
+            display: flex;
+            justify-content: space-between; /* Pushes text to left, image to right */
+            align-items: center;            /* Centers items vertically */
+            height: 70px;                   /* Matches the master frame size */
+            padding: 0 20px;
+            box-sizing: border-box;
+            background-color: #F4F6F8;
+        }
+
+        /* Left side content branding */
+        .header-logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1C1F26;
+        }
+
+        .header-tagline {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1C1F26;
+            margin-left: 10px;
+        }
+
+        /* Right side image styling */
+        .header-profile-image {
+            height: 60px;                   /* Restricts height to fit cleanly */
+            width: 218px;                    /* Maintains square aspect ratio */
+            /* border-radius: 50%;             /* Clips the image into a clean circle */
+            object-fit: cover;              /* Prevents image squishing or distortion */
+            /* border: 2px solid #04AA6D;      /* Accent color ring around the image */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-container">
+        
+        <!-- Left Side: Site Title / Branding -->
+        <div>
+            <!-- <span class="header-logo-text">ITE™</span>
+            <span class="header-tagline">| Asset Library</span> -->
+        </div>
+
+        <!-- Right Side: Target Image -->
+        <!-- Replace the placeholder URL below with your local image path (e.g., logo.png) -->
+        <!-- src="lgoITE Word Black.png" -->
+        <img 
+             
+            src="lgoBZ-ITE Horizontal Blue.png"
+            alt="Technology... done right" 
+            class="header-profile-image"
+        >
+
+    </header>
+
+</body>
+</html>

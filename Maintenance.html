@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Elevation | Application Maintenance & Support</title>
+  <style>
+    :root {
+      --graphite: #1C1F26;
+      --blue: #0B3D91;
+      --steel: #6B7280;
+      --light-blue: #EEF4FF;
+      --neutral: #F4F6F8;
+      --white: #FFFFFF;
+      --border: #E3E7EE;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--graphite);
+      background: var(--white);
+      line-height: 1.55;
+    }
+    header {
+      background: linear-gradient(135deg, var(--graphite), var(--blue));
+      color: var(--white);
+      padding: 72px 8% 64px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      opacity: .85;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.05;
+      margin: 0 0 20px;
+      max-width: 980px;
+    }
+    .hero-text {
+      font-size: 21px;
+      max-width: 850px;
+      opacity: .93;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .primary { background: var(--white); color: var(--blue); }
+    .secondary { border: 1px solid rgba(255,255,255,.65); color: var(--white); }
+    main { padding: 0 8%; }
+    section { padding: 58px 0; border-bottom: 1px solid var(--border); }
+    h2 { font-size: 34px; margin: 0 0 18px; }
+    h3 { margin: 0 0 10px; font-size: 20px; }
+    p { margin: 0 0 16px; color: #374151; }
+    .intro-grid, .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px;
+      align-items: start;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+    .card {
+      background: var(--neutral);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .highlight {
+      background: var(--light-blue);
+      border-left: 5px solid var(--blue);
+      padding: 24px;
+      border-radius: 14px;
+    }
+    ul { margin: 12px 0 0; padding-left: 20px; color: #374151; }
+    li { margin-bottom: 10px; }
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: step;
+      margin-top: 26px;
+    }
+    .step {
+      counter-increment: step;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      box-shadow: 0 8px 24px rgba(28,31,38,.06);
+    }
+    .step::before {
+      content: counter(step);
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .metric {
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--graphite);
+      color: var(--white);
+    }
+    .metric p { color: rgba(255,255,255,.82); margin: 0; }
+    .cta {
+      text-align: center;
+      background: var(--neutral);
+      margin: 58px -8% 0;
+      padding: 64px 8%;
+      border-bottom: none;
+    }
+    footer {
+      padding: 28px 8%;
+      color: var(--steel);
+      font-size: 14px;
+    }
+    @media (max-width: 980px) {
+      .intro-grid, .two-col, .card-grid, .journey, .metrics { grid-template-columns: 1fr; }
+      header { padding-top: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">IT Elevation | Delivery Layer</div>
+    <h1>Application Maintenance &amp; Support</h1>
+    <p class="hero-text">Stabilize critical applications, reduce operational noise, and transform support from reactive ticket handling into a disciplined service model that protects business continuity and improves over time.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#approach">Explore the program</a>
+      <a class="button secondary" href="#outcomes">View outcomes</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-grid">
+      <div>
+        <h2>Why it matters</h2>
+        <p>Many organizations depend on applications that have grown complex, fragile, and difficult to support. Incidents take too long to resolve, knowledge is scattered, ownership is unclear, and delivery teams are repeatedly pulled away from strategic work.</p>
+        <p>The Application Maintenance &amp; Support program creates the operating discipline needed to keep applications reliable, supportable, and aligned to business priorities.</p>
+      </div>
+      <div class="highlight">
+        <h3>Client challenge</h3>
+        <p>When support is reactive, application issues become business issues. Service interruptions, recurring defects, slow response times, and unclear escalation paths reduce confidence in IT and limit the organization’s ability to move faster.</p>
+      </div>
+    </section>
+
+    <section id="outcomes">
+      <h2>Business outcomes</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Greater stability</h3>
+          <p>Improve availability, reliability, and service continuity across business-critical applications.</p>
+        </div>
+        <div class="card">
+          <h3>Faster resolution</h3>
+          <p>Reduce incident response and recovery time through better triage, ownership, and escalation models.</p>
+        </div>
+        <div class="card">
+          <h3>Lower support noise</h3>
+          <p>Identify recurring issues, eliminate root causes, and reduce avoidable operational demand.</p>
+        </div>
+        <div class="card">
+          <h3>Continuous improvement</h3>
+          <p>Use support insights to improve applications, processes, documentation, and user experience.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2>What the program delivers</h2>
+        <ul>
+          <li>Application support model and service ownership structure.</li>
+          <li>Incident, problem, request, and escalation management practices.</li>
+          <li>SLA, KPI, and operational dashboard definitions.</li>
+          <li>Knowledge management and support documentation standards.</li>
+          <li>Root cause analysis and recurring issue reduction model.</li>
+          <li>Backlog, enhancement, and technical debt prioritization approach.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Who it helps</h2>
+        <p>This program is designed for CIOs, IT operations leaders, application owners, product teams, service managers, and business stakeholders who need dependable applications and a support model that scales with demand.</p>
+        <p>It is especially relevant when application support consumes too much delivery capacity, service levels are inconsistent, or business teams lack confidence in operational responsiveness.</p>
+      </div>
+    </section>
+
+    <section id="approach">
+      <h2>Program journey</h2>
+      <p>A practical path to move from reactive support to managed, measurable, and continuously improving application services.</p>
+      <div class="journey">
+        <div class="step"><h3>Assess</h3><p>Review application criticality, ticket trends, service performance, ownership, and current support practices.</p></div>
+        <div class="step"><h3>Prioritize</h3><p>Identify the applications, incidents, pain points, and operational risks that require immediate attention.</p></div>
+        <div class="step"><h3>Design</h3><p>Define the support model, roles, SLAs, escalation paths, knowledge standards, and improvement cadence.</p></div>
+        <div class="step"><h3>Stabilize</h3><p>Strengthen incident management, reduce recurring issues, and improve service reliability.</p></div>
+        <div class="step"><h3>Industrialize</h3><p>Standardize support workflows, dashboards, documentation, and governance routines.</p></div>
+        <div class="step"><h3>Automate</h3><p>Introduce monitoring, alerting, self-service, workflow automation, and AI-assisted support where appropriate.</p></div>
+        <div class="step"><h3>Optimize</h3><p>Use operational insights to reduce technical debt, enhance applications, and improve user experience.</p></div>
+        <div class="step"><h3>Scale</h3><p>Expand the model across the application portfolio with consistent metrics and service expectations.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key performance indicators</h2>
+      <div class="metrics">
+        <div class="metric">
+          <h3>Incident reduction</h3>
+          <p>Lower recurring incidents and avoidable support demand.</p>
+        </div>
+        <div class="metric">
+          <h3>SLA performance</h3>
+          <p>Improve response, resolution, and service-level attainment.</p>
+        </div>
+        <div class="metric">
+          <h3>Application health</h3>
+          <p>Increase stability, availability, and operational confidence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2>Proof of value</h2>
+        <p>A focused MVP can target a selected set of critical applications to validate the support model, define service metrics, reduce recurring issues, and establish an improvement backlog.</p>
+      </div>
+      <div class="highlight">
+        <h3>Expected MVP outputs</h3>
+        <ul>
+          <li>Application support assessment.</li>
+          <li>Target operating model for support.</li>
+          <li>SLA and KPI dashboard design.</li>
+          <li>Top recurring issues and root-cause actions.</li>
+          <li>Knowledge management starter pack.</li>
+          <li>90-day stabilization roadmap.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Make application support a source of confidence.</h2>
+      <p>Application Maintenance &amp; Support helps organizations protect operations today while creating the structure, insight, and discipline required to improve tomorrow.</p>
+      <a class="button primary" href="#">Start the conversation</a>
+    </section>
+  </main>
+
+  <footer>
+    IT Elevation | Technology... done right. © 2026
+  </footer>
+</body>
+</html>

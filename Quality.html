@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Elevation | Quality Engineering</title>
+  <style>
+    :root {
+      --graphite: #1C1F26;
+      --blue: #0B3D91;
+      --steel: #6B7280;
+      --light: #F4F6F8;
+      --white: #FFFFFF;
+      --border: #E5E7EB;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--graphite);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px 56px;
+    }
+
+    header {
+      padding: 56px 0 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-text {
+      max-width: 760px;
+      font-size: 20px;
+      color: #374151;
+      margin-bottom: 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      border: 1px solid rgba(11,61,145,0.22);
+      color: var(--blue);
+      background: rgba(11,61,145,0.06);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section { padding: 42px 0 0; }
+
+    .section-title {
+      font-size: 30px;
+      margin: 0 0 12px;
+      letter-spacing: -0.025em;
+    }
+
+    .section-intro {
+      max-width: 820px;
+      color: #4B5563;
+      font-size: 17px;
+      margin: 0 0 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      background: var(--white);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      color: var(--blue);
+    }
+
+    .card p { margin: 0; color: #4B5563; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+      color: #374151;
+    }
+
+    .list li { margin-bottom: 10px; }
+
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .step {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      min-height: 130px;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      background: var(--graphite);
+      color: var(--white);
+      border-radius: 18px;
+      padding: 22px;
+      min-height: 135px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 13px;
+      color: #D1D5DB;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .metric strong {
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .cta {
+      margin-top: 46px;
+      background: linear-gradient(135deg, var(--graphite), var(--blue));
+      color: var(--white);
+      border-radius: 28px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.6fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      letter-spacing: -0.025em;
+    }
+
+    .cta p { margin: 0; color: #E5E7EB; font-size: 17px; }
+
+    .button {
+      display: inline-block;
+      justify-self: end;
+      background: var(--white);
+      color: var(--blue);
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 36px;
+      color: var(--steel);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .two-col, .cta { grid-template-columns: 1fr; }
+      .cards, .stack, .metrics { grid-template-columns: 1fr 1fr; }
+      .button { justify-self: start; }
+    }
+
+    @media (max-width: 560px) {
+      .page { padding: 0 18px 42px; }
+      .cards, .stack, .metrics { grid-template-columns: 1fr; }
+      header { padding-top: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="eyebrow">IT Elevation | Delivery Layer</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Quality Engineering</h1>
+          <p class="hero-text">
+            Build quality into every stage of delivery through modern test strategy, automation, shift-left validation, risk-based controls, and measurable release confidence.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Shift-Left Quality</span>
+            <span class="pill">Test Automation</span>
+            <span class="pill">Release Confidence</span>
+            <span class="pill">Continuous Validation</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Program Purpose</h2>
+          <p>
+            Create a Quality Engineering capability that improves software reliability, reduces defects and rework, accelerates testing cycles, and gives business and technology leaders greater confidence in every release.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title">Why it matters</h2>
+      <p class="section-intro">
+        Quality Engineering helps organizations move from late-cycle testing and reactive defect management to a proactive quality model embedded across requirements, design, development, testing, release, and operations.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <h3>Common Challenge</h3>
+          <p>Teams often rely on manual testing, late defect discovery, inconsistent environments, unclear acceptance criteria, limited automation, and weak traceability between requirements, risks, tests, and releases.</p>
+        </article>
+        <article class="card">
+          <h3>Business Impact</h3>
+          <p>Poor quality practices increase production incidents, release delays, rework, business disruption, customer dissatisfaction, audit risk, and the cost of delivering change.</p>
+        </article>
+        <article class="card">
+          <h3>Program Outcome</h3>
+          <p>A scalable quality model with test strategy, automation roadmap, quality gates, risk-based testing, environment readiness, defect analytics, and release confidence metrics.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">What the program helps you build</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Core Capabilities</h3>
+          <ul class="list">
+            <li>Quality maturity assessment covering test strategy, automation, defect trends, environment readiness, release practices, tooling, governance, and team operating model.</li>
+            <li>Shift-left quality practices that improve requirements validation, acceptance criteria, test design, development collaboration, early risk identification, and continuous feedback.</li>
+            <li>Test automation framework across unit, API, integration, regression, performance, security, and user journey testing based on business risk and release frequency.</li>
+            <li>Quality governance model with entry and exit criteria, quality gates, defect management, traceability, release readiness, metrics, and executive reporting.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Client Value</h3>
+          <ul class="list">
+            <li>Faster, more predictable releases through automated validation, clearer test coverage, stronger environment planning, and reduced late-cycle surprises.</li>
+            <li>Lower cost of quality by finding issues earlier, reducing manual testing effort, preventing rework, and improving defect prevention practices.</li>
+            <li>Improved system stability and user experience through risk-based testing, production-aligned scenarios, performance validation, and stronger regression coverage.</li>
+            <li>Greater business confidence through transparent quality metrics, release readiness criteria, defect analytics, and clear accountability across teams.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Transformation journey</h2>
+      <p class="section-intro">
+        The program can begin with a quality maturity assessment and evolve into an integrated Quality Engineering capability that improves speed, stability, accountability, and business trust.
+      </p>
+      <div class="stack">
+        <div class="step"><strong>1. Assess</strong>Review current quality practices, test coverage, automation maturity, defect patterns, environments, tools, release issues, and stakeholder pain points.</div>
+        <div class="step"><strong>2. Map</strong>Map the end-to-end quality lifecycle from requirements and design through build, test, release, production validation, and continuous improvement.</div>
+        <div class="step"><strong>3. Align</strong>Align product, engineering, architecture, security, operations, and business teams on quality goals, risk priorities, release expectations, and success measures.</div>
+        <div class="step"><strong>4. Design</strong>Define target quality model, test strategy, automation approach, governance routines, quality gates, traceability standards, and release readiness criteria.</div>
+        <div class="step"><strong>5. Prioritize</strong>Prioritize improvements by business risk, defect impact, automation value, release frequency, technical dependency, and implementation feasibility.</div>
+        <div class="step"><strong>6. Roadmap</strong>Create a phased roadmap for shift-left quality, automation expansion, environment stabilization, test data readiness, tooling, and quality reporting.</div>
+        <div class="step"><strong>7. Execute</strong>Launch pilots, implement automation, activate quality gates, improve defect management, strengthen regression coverage, and publish release readiness dashboards.</div>
+        <div class="step"><strong>8. Improve</strong>Continuously refine test assets, quality metrics, automation coverage, root-cause analysis, defect prevention, and team practices as products evolve.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Typical deliverables</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Quality Engineering Blueprint</h3>
+          <p>Current-state and target-state view of the quality lifecycle, operating model, roles, governance routines, tooling, test coverage, and release readiness practices.</p>
+        </article>
+        <article class="card">
+          <h3>Test Automation Strategy</h3>
+          <p>Automation framework, coverage priorities, tool recommendations, reusable test assets, quality gates, pipeline integration, and roadmap for scalable validation.</p>
+        </article>
+        <article class="card">
+          <h3>Quality Metrics Dashboard</h3>
+          <p>Operational and outcome metrics for defect trends, test coverage, automation progress, release readiness, production stability, cycle time, and quality improvement.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Success measures</h2>
+      <div class="metrics">
+        <div class="metric"><span>Defects</span><strong>Fewer escaped defects, lower defect leakage, and stronger root-cause prevention</strong></div>
+        <div class="metric"><span>Automation</span><strong>Higher automated test coverage across critical user journeys and integration points</strong></div>
+        <div class="metric"><span>Speed</span><strong>Shorter testing cycles, faster regression execution, and fewer release delays</strong></div>
+        <div class="metric"><span>Confidence</span><strong>Clear release readiness, transparent quality metrics, and stronger stakeholder trust</strong></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Make quality a delivery accelerator, not a release bottleneck.</h2>
+        <p>
+          Quality Engineering helps technology leaders increase release confidence, reduce costly defects, and embed quality into the way teams design, build, validate, and operate digital capabilities.
+        </p>
+      </div>
+      <a class="button" href="#">Start the conversation</a>
+    </section>
+
+    <footer>
+      IT Elevation | Delivery Layer | Quality Engineering
+    </footer>
+  </main>
+</body>
+</html>

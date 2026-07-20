@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Elevation | Orchestration Layer</title>
+  <style>
+    :root {
+      --graphite:#1C1F26;
+      --blue:#0B3D91;
+      --steel:#6B7280;
+      --light:#F4F6F8;
+      --white:#FFFFFF;
+      --line:#E5E7EB;
+      --accent:#EAF2FF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--graphite);
+      background: var(--white);
+      line-height: 1.55;
+    }
+    header {
+      background: linear-gradient(135deg, var(--graphite), var(--blue));
+      color: var(--white);
+      padding: 72px 8% 64px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 13px;
+      font-weight: 700;
+      opacity: 0.85;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.05;
+      margin: 0 0 22px;
+      max-width: 980px;
+    }
+    .hero-text {
+      font-size: 20px;
+      max-width: 860px;
+      opacity: 0.92;
+      margin-bottom: 34px;
+    }
+    .cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.55);
+      color: var(--white);
+    }
+    .btn.primary { background: var(--white); color: var(--blue); border-color: var(--white); }
+    main { padding: 56px 8%; }
+    section { max-width: 1180px; margin: 0 auto 56px; }
+    h2 { font-size: 32px; margin: 0 0 18px; }
+    h3 { font-size: 21px; margin: 0 0 10px; }
+    p { margin: 0 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(28,31,38,.06);
+    }
+    .highlight {
+      background: var(--light);
+      border-radius: 28px;
+      padding: 34px;
+      border: 1px solid var(--line);
+    }
+    .program-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 230px;
+    }
+    .program-card:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: var(--blue);
+    }
+    .tag {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 14px;
+    }
+    ul { padding-left: 20px; margin: 8px 0 0; }
+    li { margin-bottom: 8px; }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .metric {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .metric strong { display: block; font-size: 26px; color: var(--blue); margin-bottom: 4px; }
+    footer {
+      background: var(--graphite);
+      color: var(--white);
+      padding: 34px 8%;
+      text-align: center;
+    }
+    @media (max-width: 980px) {
+      .grid, .grid-3, .metrics { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      header, main { padding-left: 6%; padding-right: 6%; }
+      .grid, .grid-3, .metrics { grid-template-columns: 1fr; }
+      .highlight { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">IT Elevation | Orchestration Layer</div>
+    <h1>Integration, intelligence, and scale across the enterprise.</h1>
+    <p class="hero-text">The Orchestration Layer helps organizations connect solutions, embed intelligence into workflows, scale automation responsibly, and operate with flexible delivery capacity across the technology ecosystem.</p>
+    <div class="cta-row">
+      <a href="#programs" class="btn primary">Explore the Programs</a>
+      <a href="#assessment" class="btn">Request an Orchestration Assessment</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="highlight">
+      <span class="tag">Layer purpose</span>
+      <h2>Make technology work together and scale.</h2>
+      <p>Many organizations have strong individual systems, teams, and initiatives, but still struggle to create a unified operating model. Fragmented solutions, disconnected data, inconsistent automation, and uneven sourcing models limit the ability to scale transformation.</p>
+      <p>The Orchestration Layer brings the enterprise together by aligning integrated solutions, cognitive capabilities, agentic automation, and outsourcing models into a coordinated execution system.</p>
+    </section>
+
+    <section>
+      <h2>Client challenges this layer addresses</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Disconnected solutions</h3><p>Systems and platforms operate in silos, creating duplicate work, inconsistent data flows, and limited end-to-end visibility.</p></div>
+        <div class="card"><h3>Slow intelligence adoption</h3><p>AI, analytics, and cognitive capabilities remain isolated experiments instead of becoming embedded into everyday business processes.</p></div>
+        <div class="card"><h3>Automation without governance</h3><p>Automation initiatives lack the operating model, controls, and human oversight required to scale safely and sustainably.</p></div>
+      </div>
+    </section>
+
+    <section id="programs">
+      <h2>Orchestration programs</h2>
+      <div class="grid">
+        <div class="card program-card">
+          <span class="tag">Program 01</span>
+          <h3>Unified Solutions</h3>
+          <p>Connect business platforms, applications, data flows, and digital capabilities into cohesive end-to-end solutions that reduce fragmentation and improve execution.</p>
+        </div>
+        <div class="card program-card">
+          <span class="tag">Program 02</span>
+          <h3>Cognitive Solutions</h3>
+          <p>Embed AI-enabled insights, recommendations, and decision support into business workflows to improve speed, consistency, and value realization.</p>
+        </div>
+        <div class="card program-card">
+          <span class="tag">Program 03</span>
+          <h3>Agentic Solutions</h3>
+          <p>Design and govern AI agents that can execute tasks, coordinate workflows, and augment teams with appropriate oversight and control mechanisms.</p>
+        </div>
+        <div class="card program-card">
+          <span class="tag">Program 04</span>
+          <h3>Outsourcing Solutions</h3>
+          <p>Scale delivery and operations through flexible sourcing models, managed services, performance governance, and continuous service improvement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Business outcomes</h2>
+      <div class="metrics">
+        <div class="metric"><strong>Connected</strong><span>End-to-end solution visibility</span></div>
+        <div class="metric"><strong>Intelligent</strong><span>AI-enabled workflows and decisions</span></div>
+        <div class="metric"><strong>Scalable</strong><span>Automation and delivery capacity</span></div>
+        <div class="metric"><strong>Governed</strong><span>Controls, accountability, and performance</span></div>
+      </div>
+    </section>
+
+    <section class="highlight" id="assessment">
+      <span class="tag">Engagement path</span>
+      <h2>Start with an Orchestration Assessment.</h2>
+      <p>A focused assessment identifies where disconnected solutions, AI opportunities, automation patterns, and sourcing gaps are limiting enterprise performance. The output is a practical roadmap to connect, automate, govern, and scale.</p>
+      <ul>
+        <li>Current-state review of solution fragmentation and integration gaps</li>
+        <li>Identification of cognitive and agentic automation opportunities</li>
+        <li>Operating model recommendations for governance and control</li>
+        <li>Prioritized roadmap across Unified, Cognitive, Agentic, and Outsourcing Solutions</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <strong>IT Elevation | Orchestration Layer</strong><br />
+    Technology that connects, learns, automates, and scales.
+  </footer>
+</body>
+</html>

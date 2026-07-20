@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Elevation | Architecture Layer</title>
+  <style>
+    :root {
+      --deep-graphite: #1C1F26;
+      --strategic-blue: #0B3D91;
+      --steel-gray: #6B7280;
+      --neutral: #F4F6F8;
+      --white: #FFFFFF;
+      --light-blue: #EAF1FB;
+      --border: #E2E8F0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--deep-graphite);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--deep-graphite), var(--strategic-blue));
+      color: var(--white);
+      padding: 72px 8% 64px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 700;
+      opacity: 0.85;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.05;
+      margin: 0 0 20px;
+      max-width: 960px;
+    }
+
+    .hero-copy {
+      font-size: 20px;
+      max-width: 880px;
+      opacity: 0.92;
+      margin-bottom: 32px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.55);
+    }
+
+    .button.primary {
+      background: var(--white);
+      color: var(--strategic-blue);
+    }
+
+    .button.secondary {
+      color: var(--white);
+    }
+
+    main { width: 100%; }
+
+    section {
+      padding: 64px 8%;
+    }
+
+    .section-light { background: var(--neutral); }
+
+    .section-title {
+      font-size: 34px;
+      line-height: 1.15;
+      margin: 0 0 18px;
+      color: var(--deep-graphite);
+    }
+
+    .section-intro {
+      max-width: 900px;
+      font-size: 18px;
+      color: var(--steel-gray);
+      margin-bottom: 34px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(28,31,38,0.06);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+      color: var(--strategic-blue);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--steel-gray);
+    }
+
+    .program-card {
+      background: var(--white);
+      border-left: 5px solid var(--strategic-blue);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(28,31,38,0.06);
+    }
+
+    .program-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .program-card p {
+      color: var(--steel-gray);
+      margin: 0 0 18px;
+    }
+
+    .program-link {
+      color: var(--strategic-blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .outcome-band {
+      background: var(--deep-graphite);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .outcome-band h2 {
+      margin: 0 0 14px;
+      font-size: 32px;
+    }
+
+    .outcome-band p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: 18px;
+    }
+
+    .metric-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .metric {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-weight: 700;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .step {
+      background: var(--light-blue);
+      border-radius: 18px;
+      padding: 22px;
+      position: relative;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--strategic-blue);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--steel-gray);
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 36px 8%;
+      background: var(--deep-graphite);
+      color: rgba(255,255,255,0.78);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .grid, .grid.two, .journey, .outcome-band {
+        grid-template-columns: 1fr;
+      }
+      header, section, footer { padding-left: 6%; padding-right: 6%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">IT Elevation · Architecture Layer</div>
+    <h1>Simplify complexity and create a scalable technology foundation.</h1>
+    <p class="hero-copy">The Architecture Layer helps organizations standardize technology decisions, reduce fragmentation, modernize platforms, and create a clear blueprint for growth.</p>
+    <div class="cta-row">
+      <a class="button primary" href="#programs">Explore Architecture Programs</a>
+      <a class="button secondary" href="#assessment">Start an Architecture Assessment</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="section-title">Why Architecture matters</h2>
+      <p class="section-intro">Many IT organizations struggle with duplicated platforms, inconsistent standards, legacy constraints, unclear integration patterns, and data fragmentation. The Architecture Layer creates the structure needed to align business priorities with scalable technology design.</p>
+      <div class="grid four">
+        <div class="card">
+          <h3>Complexity Reduction</h3>
+          <p>Rationalize systems, platforms, tools, and patterns to reduce cost, risk, and operational friction.</p>
+        </div>
+        <div class="card">
+          <h3>Standardization</h3>
+          <p>Define architecture principles, reusable standards, and decision guardrails that improve consistency.</p>
+        </div>
+        <div class="card">
+          <h3>Scalability</h3>
+          <p>Build technology foundations that can support growth, integration, automation, and future demand.</p>
+        </div>
+        <div class="card">
+          <h3>Modernization</h3>
+          <p>Create a practical path to evolve legacy environments without disrupting business operations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light" id="programs">
+      <h2 class="section-title">Architecture Programs</h2>
+      <p class="section-intro">The Architecture Layer is delivered through four connected programs that help clients move from fragmented technology landscapes to intentional, governed, and scalable architecture.</p>
+      <div class="grid two">
+        <div class="program-card">
+          <h3>Enterprise Architecture</h3>
+          <p>Align business capabilities, technology investments, application portfolios, and transformation roadmaps into one enterprise blueprint.</p>
+          <a class="program-link" href="enterprise_architecture_landing_page.html">View program →</a>
+        </div>
+        <div class="program-card">
+          <h3>Technology Architecture</h3>
+          <p>Define platform standards, integration patterns, technology stacks, and technical decision models that improve consistency and scalability.</p>
+          <a class="program-link" href="technology_architecture_landing_page.html">View program →</a>
+        </div>
+        <div class="program-card">
+          <h3>Data Architecture</h3>
+          <p>Create trusted data foundations, integration models, governance structures, and analytics readiness across the enterprise.</p>
+          <a class="program-link" href="data_architecture_landing_page.html">View program →</a>
+        </div>
+        <div class="program-card">
+          <h3>Infrastructure Architecture</h3>
+          <p>Design resilient, secure, cloud-ready, and cost-effective infrastructure foundations that support stable and scalable operations.</p>
+          <a class="program-link" href="infrastructure_architecture_landing_page.html">View program →</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="outcome-band">
+        <div>
+          <h2>Architecture creates the foundation for speed, quality, and scale.</h2>
+          <p>When architecture is intentional, delivery teams make better decisions faster, business stakeholders gain clearer visibility, and technology investments become easier to govern, reuse, and evolve.</p>
+        </div>
+        <div class="metric-list">
+          <div class="metric">Reduced technology fragmentation</div>
+          <div class="metric">Improved platform reuse</div>
+          <div class="metric">Clearer modernization roadmap</div>
+          <div class="metric">Stronger integration and data foundations</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <h2 class="section-title">Typical engagement journey</h2>
+      <p class="section-intro">The Architecture Layer helps clients move from assessment to actionable architecture direction through a simple, executive-friendly engagement model.</p>
+      <div class="journey">
+        <div class="step">
+          <h3>Assess the landscape</h3>
+          <p>Review applications, platforms, integrations, data flows, infrastructure, and current architecture practices.</p>
+        </div>
+        <div class="step">
+          <h3>Define principles</h3>
+          <p>Establish architecture guardrails, decision criteria, and standards aligned to business priorities.</p>
+        </div>
+        <div class="step">
+          <h3>Prioritize modernization</h3>
+          <p>Identify simplification, consolidation, and modernization opportunities with business value and feasibility.</p>
+        </div>
+        <div class="step">
+          <h3>Build the roadmap</h3>
+          <p>Create a practical transformation roadmap with sequencing, dependencies, outcomes, and governance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="assessment">
+      <h2 class="section-title">Start with an Architecture Assessment</h2>
+      <p class="section-intro">A focused assessment can help reveal where complexity is slowing the organization down, which architecture decisions need governance, and where modernization can deliver the most business value.</p>
+      <div class="cta-row">
+        <a class="button primary" style="background: var(--strategic-blue); color: white;" href="mailto:contact@example.com?subject=Architecture%20Layer%20Assessment">Request an Assessment</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    IT Elevation · Architecture Layer · Simplification & Standardization
+  </footer>
+</body>
+</html>

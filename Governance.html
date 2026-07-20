@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Elevation | Governance Layer</title>
+  <style>
+    :root {
+      --graphite:#1C1F26;
+      --blue:#0B3D91;
+      --steel:#6B7280;
+      --light:#F4F6F8;
+      --white:#FFFFFF;
+      --line:#E5E7EB;
+      --soft-blue:#EAF1FB;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--graphite);
+      background:var(--white);
+      line-height:1.6;
+    }
+    header {
+      background:linear-gradient(135deg, var(--graphite), var(--blue));
+      color:var(--white);
+      padding:72px 8% 84px;
+    }
+    .eyebrow {
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:13px;
+      font-weight:700;
+      opacity:.85;
+      margin-bottom:18px;
+    }
+    h1 {
+      font-size:52px;
+      line-height:1.05;
+      margin:0 0 22px;
+      max-width:900px;
+    }
+    .hero-text {
+      font-size:21px;
+      max-width:880px;
+      opacity:.95;
+      margin-bottom:34px;
+    }
+    .cta-row { display:flex; gap:16px; flex-wrap:wrap; }
+    .button {
+      display:inline-block;
+      text-decoration:none;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:700;
+    }
+    .primary { background:var(--white); color:var(--blue); }
+    .secondary { border:1px solid rgba(255,255,255,.6); color:var(--white); }
+    main { width:100%; }
+    section { padding:64px 8%; }
+    .section-light { background:var(--light); }
+    .section-title {
+      font-size:34px;
+      line-height:1.15;
+      margin:0 0 18px;
+    }
+    .section-intro {
+      max-width:860px;
+      color:var(--steel);
+      font-size:18px;
+      margin:0 0 36px;
+    }
+    .grid { display:grid; gap:22px; }
+    .grid-3 { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns:repeat(4, minmax(0, 1fr)); }
+    .card {
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:26px;
+      box-shadow:0 8px 24px rgba(28,31,38,.06);
+    }
+    .section-light .card { background:var(--white); }
+    .card h3 {
+      margin:0 0 10px;
+      font-size:21px;
+      color:var(--blue);
+    }
+    .card p { margin:0; color:var(--steel); }
+    .program-card {
+      min-height:245px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .program-link {
+      display:inline-block;
+      margin-top:20px;
+      color:var(--blue);
+      font-weight:700;
+      text-decoration:none;
+    }
+    .band {
+      background:var(--soft-blue);
+      border-left:6px solid var(--blue);
+      border-radius:16px;
+      padding:28px;
+      max-width:980px;
+    }
+    .outcome-list {
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:18px;
+      margin-top:24px;
+    }
+    .outcome {
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px 20px;
+      font-weight:700;
+    }
+    .journey {
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:16px;
+      counter-reset:step;
+    }
+    .step {
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px;
+      position:relative;
+    }
+    .step:before {
+      counter-increment:step;
+      content:counter(step);
+      display:inline-flex;
+      width:34px;
+      height:34px;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:var(--blue);
+      color:var(--white);
+      font-weight:700;
+      margin-bottom:14px;
+    }
+    .step h3 { margin:0 0 8px; font-size:19px; }
+    .step p { margin:0; color:var(--steel); }
+    .final-cta {
+      background:var(--graphite);
+      color:var(--white);
+      text-align:center;
+    }
+    .final-cta .section-title { color:var(--white); }
+    .final-cta p {
+      max-width:760px;
+      margin:0 auto 28px;
+      color:rgba(255,255,255,.82);
+      font-size:18px;
+    }
+    footer {
+      padding:28px 8%;
+      background:#111318;
+      color:rgba(255,255,255,.7);
+      font-size:14px;
+      text-align:center;
+    }
+    @media (max-width: 960px) {
+      h1 { font-size:40px; }
+      .grid-3, .grid-4, .journey, .outcome-list { grid-template-columns:1fr; }
+      section, header { padding-left:6%; padding-right:6%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">IT Elevation | Governance Layer</div>
+    <h1>Value & Decision Alignment for technology transformation.</h1>
+    <p class="hero-text">The Governance Layer helps organizations connect strategy, investment, execution, adoption, and risk into one coherent operating model. It creates the decision discipline needed to ensure technology work delivers measurable business value.</p>
+    <div class="cta-row">
+      <a class="button primary" href="#programs">Explore Governance Programs</a>
+      <a class="button secondary" href="#assessment">Request a Governance Assessment</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="section-title">Why Governance matters</h2>
+      <p class="section-intro">Many transformation efforts fail not because teams lack effort, but because priorities are unclear, decisions are slow, accountability is fragmented, adoption is underestimated, and risk is treated as an afterthought.</p>
+      <div class="grid grid-3">
+        <div class="card"><h3>Misaligned priorities</h3><p>Business and technology teams often pursue different definitions of value, creating competing roadmaps and diluted execution focus.</p></div>
+        <div class="card"><h3>Unclear accountability</h3><p>Decision rights, ownership, and escalation paths are frequently undefined, slowing progress and increasing delivery friction.</p></div>
+        <div class="card"><h3>Weak value realization</h3><p>Organizations may approve initiatives without a practical mechanism to track outcomes, adoption, benefits, and risk over time.</p></div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <h2 class="section-title">What the Governance Layer delivers</h2>
+      <div class="band">
+        <p>The Governance Layer establishes the management system for technology transformation: how priorities are selected, how work is funded, how outcomes are measured, how change is adopted, and how security and risk are governed across the enterprise.</p>
+      </div>
+      <div class="outcome-list">
+        <div class="outcome">Clear decision rights and executive alignment</div>
+        <div class="outcome">Portfolio visibility and measurable value tracking</div>
+        <div class="outcome">Stronger adoption and change readiness</div>
+        <div class="outcome">Integrated security governance and risk discipline</div>
+      </div>
+    </section>
+
+    <section id="programs">
+      <h2 class="section-title">Governance Programs</h2>
+      <p class="section-intro">The layer is composed of four integrated programs that help leadership guide technology work from strategy to execution, adoption, and risk management.</p>
+      <div class="grid grid-4">
+        <div class="card program-card">
+          <div><h3>Product Management</h3><p>Connect product strategy, customer value, roadmaps, prioritization, and measurable outcomes into a business-aligned product operating model.</p></div>
+          <a class="program-link" href="product_management_landing_page.html">View program →</a>
+        </div>
+        <div class="card program-card">
+          <div><h3>Portfolio & Program Management</h3><p>Provide executive visibility, governance cadence, prioritization discipline, and delivery control across strategic technology initiatives.</p></div>
+          <a class="program-link" href="portfolio_program_management_landing_page.html">View program →</a>
+        </div>
+        <div class="card program-card">
+          <div><h3>Change Management</h3><p>Prepare people, leaders, and teams to adopt new ways of working through structured readiness, communication, training, and reinforcement.</p></div>
+          <a class="program-link" href="change_management_landing_page.html">View program →</a>
+        </div>
+        <div class="card program-card">
+          <div><h3>Security Management</h3><p>Embed security governance, controls, risk visibility, and accountability into transformation decisions and operational execution.</p></div>
+          <a class="program-link" href="security_management_landing_page.html">View program →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <h2 class="section-title">A practical path to stronger governance</h2>
+      <p class="section-intro">The Governance Layer can start as a focused assessment or as a structured transformation workstream, depending on the client’s maturity and urgency.</p>
+      <div class="journey">
+        <div class="step"><h3>Assess</h3><p>Evaluate current decision structures, portfolio visibility, adoption readiness, and risk governance.</p></div>
+        <div class="step"><h3>Align</h3><p>Define governance principles, decision rights, priorities, roles, and executive cadence.</p></div>
+        <div class="step"><h3>Activate</h3><p>Launch program routines, dashboards, artifacts, and operating mechanisms.</p></div>
+        <div class="step"><h3>Improve</h3><p>Measure outcomes, adjust governance practices, and reinforce continuous value realization.</p></div>
+      </div>
+    </section>
+
+    <section id="assessment" class="final-cta">
+      <h2 class="section-title">Start with the decisions that matter most.</h2>
+      <p>Governance is where transformation becomes intentional. IT Elevation helps leadership align priorities, accountability, adoption, and risk so technology investments create measurable enterprise value.</p>
+      <a class="button primary" href="mailto:contact@example.com?subject=Governance%20Layer%20Assessment">Request a Governance Assessment</a>
+    </section>
+  </main>
+
+  <footer>
+    IT Elevation | Governance Layer — Technology transformation with value, accountability, and control.
+  </footer>
+</body>
+</html>
