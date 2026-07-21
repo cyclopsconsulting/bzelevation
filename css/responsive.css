@@ -1,0 +1,45 @@
+@media (max-width:768px) {
+  .menu-toggle {
+    display: block
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid #E5E7EB;
+  }
+
+  .nav-links.open {
+    display: flex
+  }
+
+  .hero {
+    padding: 3rem 0
+  }
+}
+
+@media(max-width:900px) {
+
+  .outcomes,
+  .journey,
+  .footer-grid,
+  .cta-section,
+  .overview-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .cta-section {
+
+    padding: 50px 35px;
+
+  }
+
+}
