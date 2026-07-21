@@ -1,93 +1,47 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Framework</title>
-
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        html, body{
-            width:100%;
-            height:100%;
-            overflow:hidden;
-            font-family:Arial, Helvetica, sans-serif;
-        }
-
-        .container{
-            display:grid;
-            grid-template-columns:220px 1fr;
-            height:100vh;
-            width:100vw;
-        }
-
-        .menu{
-            border-right:1px solid #CCCCCC;
-            height:100%;
-        }
-
-        .content{
-            display:grid;
-            grid-template-rows:70px 1fr 40px;
-            height:100%;
-        }
-
-        iframe{
-            width:100%;
-            height:100%;
-            border:none;
-            display:block;
-        }
-
-        .header{
-            border-bottom:1px solid #CCCCCC;
-        }
-
-        .body{
-            overflow:hidden;
-        }
-
-        .footer{
-            border-top:1px solid #CCCCCC;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Elevation</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script defer src="js/menu.js"></script>
 </head>
-
 <body>
-
-<div class="container">
-
-    <!-- Left Menu -->
-    <div class="menu">
-        <iframe src="Menu.html" title="Menu"></iframe>
-    </div>
-
-    <!-- Right Side -->
-    <div class="content">
-
-        <!-- Header -->
-        <div class="header">
-            <iframe src="Header.html" title="Header"></iframe>
-        </div>
-
-        <!-- Body -->
-        <div class="body">
-            <iframe src="ITE.html" title="Body" name="content-viewport"></iframe>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <iframe src="Footer.html" title="Footer"></iframe>
-        </div>
-
-    </div>
-
+<header class="site-header">
+<div class="container navbar">
+<a class="logo" href="#">IT Elevation™</a>
+<button class="menu-toggle">☰</button>
+<ul class="nav-links">
+<li><a href="Governance.html">Governance</a></li>
+<li><a href="Architecture.html">Architecture</a></li>
+<li><a href="Delivery.html">Delivery</a></li>
+<li><a href="Data.html">Data</a></li>
+<li><a href="Insights.html">Insights</a></li>
+</ul>
 </div>
+</header>
 
+<section class="hero">
+<div class="container">
+<h1>Technology... Done Right.</h1>
+<p>A modern responsive foundation for the IT Elevation platform.</p>
+<p style="margin-top:1.5rem">
+<a class="btn btn-primary" href="Governance.html">Explore</a>
+</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container grid grid-3">
+<div class="card"><h2>Governance</h2><p>Shared responsive component.</p></div>
+<div class="card"><h2>Architecture</h2><p>Shared responsive component.</p></div>
+<div class="card"><h2>Delivery</h2><p>Shared responsive component.</p></div>
+</div>
+</section>
+
+<footer>© 2026 BZ | IT Elevation™</footer>
 </body>
 </html>
